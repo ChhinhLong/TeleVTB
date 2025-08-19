@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: youtube-telegram-bot
+    env: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: YOUTUBE_API_KEY
+        sync: false
+      - key: BOT_USERNAME
+        sync: false
+      - key: ADMIN_USER_ID
+        sync: false
+    numInstances: 1
+    plan: starter
+    region: oregon
+    healthCheckPath: /health
+    buildCommand: ""
+    startCommand: "python main.py"

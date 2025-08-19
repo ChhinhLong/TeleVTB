@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "youtube-telegram-bot"
+version = "1.0.0"
+description = "A Telegram bot that monitors YouTube channels and shares new videos automatically"
+authors = [{name = "YouTube Monitor Bot", email = "bot@example.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "python-telegram-bot==20.8",
+    "google-api-python-client==2.179.0",
+    "requests==2.32.5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+    "flake8>=4.0",
+]

@@ -1,0 +1,34 @@
+{
+  "name": "YouTube Telegram Bot",
+  "description": "A Telegram bot that monitors YouTube channels and shares new videos automatically to groups with admin management commands.",
+  "repository": "https://github.com/yourusername/youtube-telegram-bot",
+  "logo": "https://telegram.org/img/t_logo.png",
+  "keywords": ["telegram", "bot", "youtube", "monitoring", "notifications", "python"],
+  "stack": "container",
+  "env": {
+    "TELEGRAM_BOT_TOKEN": {
+      "description": "Your Telegram bot token from @BotFather",
+      "required": true
+    },
+    "YOUTUBE_API_KEY": {
+      "description": "Your YouTube Data API v3 key from Google Cloud Console",
+      "required": true
+    },
+    "BOT_USERNAME": {
+      "description": "Your bot username (without @) - optional",
+      "required": false
+    },
+    "ADMIN_USER_ID": {
+      "description": "Admin user ID for extra bot controls - optional",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "buildpacks": [],
+  "image": "heroku/heroku:22"
+}
